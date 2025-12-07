@@ -3,9 +3,53 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SLN Institutions — Results</title>
+  <title>SLN Institutions -- Results</title>
   <meta name="description" content="SLN Institutions - Results and top performers" />
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Gallery Styles -->
+  <style>
+    :root {
+      --page-gutter: 18px;
+    }
+
+    .results-gallery-wrap {
+      padding-left: calc(var(--page-gutter) + 8px);
+      padding-right: calc(var(--page-gutter) + 8px);
+      padding-top: 18px;
+      padding-bottom: 28px;
+    }
+
+    .results-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      align-items: start;
+    }
+
+    .gallery-item {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: auto; /* keeps original ratio */
+      border-radius: 8px;
+      object-fit: contain;
+      margin: 0;
+    }
+
+    @media (max-width: 520px) {
+      .results-gallery-wrap { padding-left: 14px; padding-right: 14px; }
+      .results-gallery { gap: 12px; }
+      .gallery-item { padding: 6px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -13,11 +57,10 @@
   <header class="site-header" role="banner">
     <div class="header-inner container">
       <div class="brand">
-        <!-- UPDATED LOGO PATH -->
         <img src="assets/logo/sln-logo.jpeg" alt="SLN Institutions logo" class="brand-logo">
         <div>
           <div class="brand-title">SLN INSTITUTIONS</div>
-          <div class="brand-subtitle">Sri Lakshmi Narasimha E.M High School — Karvetinagar</div>
+          <div class="brand-subtitle">Sri Lakshmi Narasimha E.M High School -- Karvetinagar</div>
         </div>
       </div>
 
@@ -47,40 +90,55 @@
   <main>
     <section class="section container fade-in">
       <h1 class="section-title">Results & Top Performers</h1>
-      <p class="lead">Selected results and recognitions. Contact the office for complete certificates and detailed lists.</p>
+      <p class="lead">Selected results and recognitions.</p>
 
-      <div class="card">
-        <div class="results-list grid-3">
+      <!-- CLEAN IMAGE GALLERY -->
+      <section class="results-gallery-wrap">
+        <div class="results-gallery">
 
-          <!-- 2024 SSC PDF -->
-          <div class="card">
-            <h4>2024 — SSC Top Scorers</h4>
-            <p class="muted">Merit list highlights.</p>
-            <p class="small muted">Contact office for certificates.</p>
-            <a class="btn btn-ghost" href="assets/results/2024-ssc.pdf" target="_blank" rel="noopener">Download (PDF)</a>
-          </div>
+          <!-- 10 IMAGES (Click -> Open original) -->
+          <a class="gallery-item" href="assets/results/result1.jpg" target="_blank">
+            <img src="assets/results/result1.jpg" alt="Result photo 1" loading="lazy">
+          </a>
 
-          <!-- 2024 Intermediate PDF -->
-          <div class="card">
-            <h4>2024 — Intermediate Results</h4>
-            <p class="muted">Outstanding results in MPC & BiPC.</p>
-            <p class="small muted">Contact office for certificates.</p>
-            <a class="btn btn-ghost" href="assets/results/2024-intermediate.pdf" target="_blank" rel="noopener">Download (PDF)</a>
-          </div>
+          <a class="gallery-item" href="assets/results/result2.jpg" target="_blank">
+            <img src="assets/results/result2.jpg" alt="Result photo 2" loading="lazy">
+          </a>
 
-          <!-- District Achievers -->
-          <div class="card">
-            <h4>District Achievers</h4>
-            <p class="muted">Students who achieved district-level recognition in academics & sports.</p>
-            <p class="small muted">Photos and certificates available at the school office.</p>
-          </div>
+          <a class="gallery-item" href="assets/results/result3.jpg" target="_blank">
+            <img src="assets/results/result3.jpg" alt="Result photo 3" loading="lazy">
+          </a>
+
+          <a class="gallery-item" href="assets/results/result4.jpg" target="_blank">
+            <img src="assets/results/result4.jpg" alt="Result photo 4" loading="lazy">
+          </a>
+
+          <a class="gallery-item" href="assets/results/result5.jpg" target="_blank">
+            <img src="assets/results/result5.jpg" alt="Result photo 5" loading="lazy">
+          </a>
+
+          <a class="gallery-item" href="assets/results/result7.jpg" target="_blank">
+            <img src="assets/results/result7.jpg" alt="Result photo 7" loading="lazy">
+          </a>
+
+          <a class="gallery-item" href="assets/results/result8.jpg" target="_blank">
+            <img src="assets/results/result8.jpg" alt="Result photo 8" loading="lazy">
+          </a>
+
+          <a class="gallery-item" href="assets/results/result9.jpg" target="_blank">
+            <img src="assets/results/result9.jpg" alt="Result photo 9" loading="lazy">
+          </a>
+
+          <a class="gallery-item" href="assets/results/IMG-20251120-WA0016.jpg" target="_blank">
+            <img src="assets/results/IMG-20251120-WA0016.jpg" alt="Result photo A" loading="lazy">
+          </a>
+
+          <a class="gallery-item" href="assets/results/IMG-20251120-WA0021.jpg" target="_blank">
+            <img src="assets/results/IMG-20251120-WA0021.jpg" alt="Result photo B" loading="lazy">
+          </a>
 
         </div>
-      </div>
-
-      <!-- OPTIONAL IMAGE AREA (IMAGES ONLY STORED, NOT DISPLAYED) -->
-      <!-- YOU ASKED: DO NOT SHOW IMAGES HERE -->
-      <!-- Images stored in: assets/results/ -->
+      </section>
 
     </section>
   </main>
@@ -89,11 +147,10 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-left">
-        <!-- UPDATED LOGO PATH -->
         <img src="assets/logo/sln-logo.jpeg" alt="logo" class="footer-logo" />
         <div>
           <div class="strong">SLN Institutions</div>
-          <div class="muted small">Sri Lakshmi Narasimha E.M High School — Karvetinagar</div>
+          <div class="muted small">Sri Lakshmi Narasimha E.M High School -- Karvetinagar</div>
         </div>
       </div>
       <div class="footer-right muted">© <span id="footer-year"></span> SLN Institutions. All rights reserved.</div>
@@ -102,4 +159,4 @@
 
   <script src="scripts.js"></script>
 </body>
-        </html>
+  </html>
