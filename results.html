@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SLN Institutions -- Results</title>
+  <title>SLN Institutions — Results</title>
   <meta name="description" content="SLN Institutions - Results and top performers" />
   <link rel="stylesheet" href="styles.css">
 
@@ -24,7 +24,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 14px;
-      align-items: start;
     }
 
     .gallery-item {
@@ -36,12 +35,10 @@
     }
 
     .gallery-item img {
-      display: block;
       width: 100%;
-      height: auto; /* keeps original ratio */
+      height: auto; /* keeps natural aspect ratio */
       border-radius: 8px;
       object-fit: contain;
-      margin: 0;
     }
 
     @media (max-width: 520px) {
@@ -51,6 +48,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -60,11 +58,11 @@
         <img src="assets/logo/sln-logo.jpeg" alt="SLN Institutions logo" class="brand-logo">
         <div>
           <div class="brand-title">SLN INSTITUTIONS</div>
-          <div class="brand-subtitle">Sri Lakshmi Narasimha E.M High School -- Karvetinagar</div>
+          <div class="brand-subtitle">Sri Lakshmi Narasimha E.M High School — Karvetinagar</div>
         </div>
       </div>
 
-      <nav class="navlinks" aria-label="Primary Navigation">
+      <nav class="navlinks">
         <a href="index.html#about" class="nav-link">About</a>
         <a href="index.html#academics" class="nav-link">Academics</a>
         <a href="index.html#admissions" class="nav-link">Admissions</a>
@@ -73,10 +71,10 @@
         <a href="index.html#contact" class="nav-link">Contact</a>
       </nav>
 
-      <button id="menu-btn" class="menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">☰</button>
+      <button id="menu-btn" class="menu-btn">☰</button>
     </div>
 
-    <nav id="mobile-nav" class="mobile-nav" aria-hidden="true">
+    <nav id="mobile-nav" class="mobile-nav">
       <a href="index.html#about" class="mobile-link">About</a>
       <a href="index.html#academics" class="mobile-link">Academics</a>
       <a href="index.html#admissions" class="mobile-link">Admissions</a>
@@ -86,55 +84,92 @@
     </nav>
   </header>
 
-  <!-- MAIN -->
+  <!-- MAIN CONTENT -->
   <main>
     <section class="section container fade-in">
-      <h1 class="section-title">Results & Top Performers</h1>
-      <p class="lead">Selected results and recognitions.</p>
 
-      <!-- CLEAN IMAGE GALLERY -->
+      <h1 class="section-title">Results & Top Performers</h1>
+      <p class="lead">Selected results and recognitions from SLN Institutions.</p>
+
+      <!-- ACHIEVEMENT SECTIONS -->
+      <div class="card">
+        <div class="results-list grid-3">
+
+          <div class="card">
+            <h4>District Achievers</h4>
+            <p class="muted">Students who secured district-level recognition in academics, sports, and co-curricular activities.</p>
+            <p class="small muted">Certificates available at the school office.</p>
+          </div>
+
+          <div class="card">
+            <h4>Olympiad & Competitive Exams</h4>
+            <p class="muted">Top performers in NSO, IMO, Cyber Olympiad, NSTSE and other competitive examinations.</p>
+            <p class="small muted">Full rankings available on request.</p>
+          </div>
+
+          <div class="card">
+            <h4>Sports & Games — State Level</h4>
+            <p class="muted">Represented in Athletics, Kabaddi, Kho-Kho, Volleyball, and Yoga at state-level tournaments.</p>
+            <p class="small muted">Team photos stored in school records.</p>
+          </div>
+
+          <div class="card">
+            <h4>Cultural & Arts Excellence</h4>
+            <p class="muted">Winners in dance, drawing, elocution, essay writing, and singing at mandal & district competitions.</p>
+            <p class="small muted">Medals & achievement folders available.</p>
+          </div>
+
+          <div class="card">
+            <h4>Science Fair & Project Exhibition</h4>
+            <p class="muted">Winners at Inspire Awards, Science Talent Expo, and school-level project exhibitions.</p>
+            <p class="small muted">Project reports available in the library.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- IMAGE GALLERY -->
       <section class="results-gallery-wrap">
         <div class="results-gallery">
 
-          <!-- 10 IMAGES (Click -> Open original) -->
           <a class="gallery-item" href="assets/results/result1.jpg" target="_blank">
-            <img src="assets/results/result1.jpg" alt="Result photo 1" loading="lazy">
+            <img src="assets/results/result1.jpg" alt="">
           </a>
 
           <a class="gallery-item" href="assets/results/result2.jpg" target="_blank">
-            <img src="assets/results/result2.jpg" alt="Result photo 2" loading="lazy">
+            <img src="assets/results/result2.jpg" alt="">
           </a>
 
           <a class="gallery-item" href="assets/results/result3.jpg" target="_blank">
-            <img src="assets/results/result3.jpg" alt="Result photo 3" loading="lazy">
+            <img src="assets/results/result3.jpg" alt="">
           </a>
 
           <a class="gallery-item" href="assets/results/result4.jpg" target="_blank">
-            <img src="assets/results/result4.jpg" alt="Result photo 4" loading="lazy">
+            <img src="assets/results/result4.jpg" alt="">
           </a>
 
           <a class="gallery-item" href="assets/results/result5.jpg" target="_blank">
-            <img src="assets/results/result5.jpg" alt="Result photo 5" loading="lazy">
+            <img src="assets/results/result5.jpg" alt="">
           </a>
 
           <a class="gallery-item" href="assets/results/result7.jpg" target="_blank">
-            <img src="assets/results/result7.jpg" alt="Result photo 7" loading="lazy">
+            <img src="assets/results/result7.jpg" alt="">
           </a>
 
           <a class="gallery-item" href="assets/results/result8.jpg" target="_blank">
-            <img src="assets/results/result8.jpg" alt="Result photo 8" loading="lazy">
+            <img src="assets/results/result8.jpg" alt="">
           </a>
 
           <a class="gallery-item" href="assets/results/result9.jpg" target="_blank">
-            <img src="assets/results/result9.jpg" alt="Result photo 9" loading="lazy">
+            <img src="assets/results/result9.jpg" alt="">
           </a>
 
           <a class="gallery-item" href="assets/results/IMG-20251120-WA0016.jpg" target="_blank">
-            <img src="assets/results/IMG-20251120-WA0016.jpg" alt="Result photo A" loading="lazy">
+            <img src="assets/results/IMG-20251120-WA0016.jpg" alt="">
           </a>
 
           <a class="gallery-item" href="assets/results/IMG-20251120-WA0021.jpg" target="_blank">
-            <img src="assets/results/IMG-20251120-WA0021.jpg" alt="Result photo B" loading="lazy">
+            <img src="assets/results/IMG-20251120-WA0021.jpg" alt="">
           </a>
 
         </div>
@@ -147,16 +182,18 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-left">
-        <img src="assets/logo/sln-logo.jpeg" alt="logo" class="footer-logo" />
+        <img src="assets/logo/sln-logo.jpeg" class="footer-logo" alt="">
         <div>
           <div class="strong">SLN Institutions</div>
-          <div class="muted small">Sri Lakshmi Narasimha E.M High School -- Karvetinagar</div>
+          <div class="muted small">Sri Lakshmi Narasimha E.M High School — Karvetinagar</div>
         </div>
       </div>
-      <div class="footer-right muted">© <span id="footer-year"></span> SLN Institutions. All rights reserved.</div>
+      <div class="footer-right muted">
+        © <span id="footer-year"></span> SLN Institutions. All rights reserved.
+      </div>
     </div>
   </footer>
 
   <script src="scripts.js"></script>
 </body>
-  </html>
+    </html>
