@@ -24,7 +24,7 @@ body{
 }
 .container {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: 2 auto;
   padding: var(--container-padding);
   padding-left: calc(var(--container-padding) + var(--page-gutter) + 6px);
   padding-right: calc(var(--container-padding) + var(--page-gutter) + 6px);
