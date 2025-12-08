@@ -22,7 +22,13 @@ body{
   line-height:1.45;
   overflow-x:hidden;
 }
-.container{max-width:var(--max-width); margin:0 auto; padding:var(--container-padding); padding-left:calc(var(--container-padding) + var(--page-gutter)); padding-right:calc(var(--container-padding) + var(--page-gutter));}
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+  padding-left: calc(var(--container-padding) + var(--page-gutter) + 6px);
+  padding-right: calc(var(--container-padding) + var(--page-gutter) + 6px);
+}
 .muted{color:var(--muted)}
 .small{font-size:13px}
 .strong{font-weight:700}
