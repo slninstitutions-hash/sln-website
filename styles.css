@@ -274,15 +274,33 @@ body{
 #contact-form input, #contact-form textarea{ max-width:100%; }
 .card{ width:100%; }
 
-/* FOOTER LOGO FIX */
+/* ===========================
+   ⭐ FOOTER LOGO & TEXT ⭐
+   =========================== */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, text right */
+  padding: 16px 24px;
+  background: var(--navy);
+  color: white;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .footer-logo {
-  height: 56px;       /* same as header */
-  width: auto;        /* maintain aspect ratio */
-  padding: 4px;       /* same as header */
-  border-radius: 8px; /* same as header */
+  height: 56px;      /* same as header */
+  width: auto;
+  padding: 4px;
+  border-radius: 8px;
   object-fit: cover;
   display: block;
 }
 
-/* END */ 
+.footer-text {
+  font-size: 14px;
+  color: white;
+  text-align: right;
+}
 
+/* END */
