@@ -249,6 +249,15 @@ body{
   border:0;
   display:block;
 }
+/* FOOTER LOGO FIX */
+.footer-logo {
+  height: 56px;       /* same as header */
+  width: auto;        /* maintain aspect ratio */
+  padding: 4px;       /* optional, same as header */
+  border-radius: 8px; /* optional, same as header */
+  object-fit: cover;
+  display: block;
+}
 
 /* Responsive */
 @media (max-width:900px){
