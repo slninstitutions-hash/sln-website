@@ -233,11 +233,25 @@ body{
 /* FOUNDERS */
 .founders-list{ display:flex; flex-direction:column; gap:12px; }
 .founder{ display:flex; gap:12px; align-items:flex-start; }
+
+/* ⭐ PATCHED AVATAR (IMAGE SUPPORT) ⭐ */
 .avatar{
-  height:64px; width:64px; min-width:64px;
+  height:64px;
+  width:64px;
+  min-width:64px;
   border-radius:12px;
+  overflow:hidden;
   background:linear-gradient(180deg,#0B5394,#01203F);
-  color:white; display:flex; align-items:center; justify-content:center; font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.avatar-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
 }
 
 /* CONTACT GRID & QUICK FORM */
