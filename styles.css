@@ -190,6 +190,15 @@ body{
   display:block;
 }
 
+/* Founder Qualification Text */
+.founder .qualification {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin: 4px 0;
+}
+
+
 /* CONTACT GRID */
 .contact-grid{
   display:grid;
