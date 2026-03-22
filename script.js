@@ -103,9 +103,8 @@ counters.forEach(counter => {
 ================================== */
 
 const revealElements = document.querySelectorAll(
-  ".glass-card, .facility-item, .gallery-grid img, .testimonial-card"
+  ".glass-card:not(.principal-card), .facility-item, .gallery-grid img, .testimonial-card"
 );
-
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
@@ -131,8 +130,9 @@ revealElements.forEach((el) => {
 const sections = document.querySelectorAll(".section");
 
 sections.forEach(section => {
-  const children = section.querySelectorAll(".glass-card, .facility-item, img, .step");
-
+  nst revealElements = document.querySelectorAll(
+  ".glass-card:not(.principal-card), .facility-item, .gallery-grid img, .testimonial-card"
+);
   const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
