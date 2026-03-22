@@ -140,14 +140,18 @@ body{
 /* ================= HERO ================= */
 
 .hero{
-  height:100vh;
+  min-height:100vh;
+  padding:80px 0 60px;
   background:url('https://images.unsplash.com/photo-1588072432836-e10032774350') center/cover no-repeat;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
+  gap:40px;
   position:relative;
   text-align:center;
   color:white;
+  overflow:hidden;
 }
 
 .hero-overlay{
@@ -162,7 +166,9 @@ body{
 .hero-content{
   position:relative;
   z-index:2;
-  max-width:850px;
+  width:100%;
+  max-width:900px;
+  padding:0 1rem;
 }
 
 .hero h1{
@@ -216,14 +222,59 @@ body{
   color:black;
 }
 
+/* HERO RESPONSIVE TUNING */
+.hero-content{
+  width:100%;
+}
+
+.hero-stats{
+  width:100%;
+  max-width:1200px;
+}
+
+@media (max-width: 1100px) {
+  .hero{
+    gap:32px;
+  }
+
+  .hero-content{
+    padding:0 1.25rem;
+  }
+
+  .hero-stats{
+    margin-top:40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .hero-buttons{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .hero-stats{
+    gap:18px;
+    padding:0 10px;
+  }
+}
+
 /* Floating Stats */
 
 .hero-stats {
     position: relative;
     margin-top: 80px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 26px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -316,22 +367,19 @@ body{
   margin-top:30px;
 }
 
-.principal-img{
-  height:180px;
-  background:linear-gradient(135deg,#ddd,#bbb);
-  border-radius:var(--radius);
-  margin-bottom:20px;
+.principal-section .principal-card{
+  text-align:center;
 }
 
-/* ================= Founders ================= */
-
 .principal-img {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 50%;
-  margin: 0 auto 15px;
+  margin: 0 auto 20px;
   display: block;
+  background:linear-gradient(135deg,#ddd,#bbb);
+  box-shadow:var(--shadow-soft);
 }
 
 /* ================= ACADEMICS ================= */
