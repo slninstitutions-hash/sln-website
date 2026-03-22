@@ -231,6 +231,8 @@ body{
 .hero-stats{
   width:100%;
   max-width:1200px;
+  position:relative;
+  z-index:2;
 }
 
 @media (max-width: 1100px) {
@@ -275,9 +277,9 @@ body{
 /* Floating Stats */
 
 .hero-stats {
-  position: relative;
-  margin-top: 80px;
-  display: grid;
+ position: relative;
+ margin-top: 80px;
+ display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 26px;
   max-width: 1200px;
@@ -287,16 +289,17 @@ body{
 }
 
 .stat-card {
-  backdrop-filter: blur(18px);
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 20px;
-  padding: 35px 20px;
-  text-align: center;
-  color: #fff;
-  transition: 0.4s ease;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    backdrop-filter: blur(18px);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 35px 20px;
+    text-align: center;
+    color: #fff;
+    transition: 0.4s ease;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
+
 
 .stat-card i {
   font-size: 28px;
