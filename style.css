@@ -106,6 +106,7 @@ body{
   font-weight:500;
   position:relative;
   transition:0.3s;
+  z-index:1100;
 }
 
 .nav-menu a::after{
@@ -141,7 +142,7 @@ body{
 
 .hero{
   min-height:100vh;
-  padding:80px 0 60px;
+  padding:160px 0 60px;
   background:url('https://images.unsplash.com/photo-1588072432836-e10032774350') center/cover no-repeat;
   display:flex;
   flex-direction:column;
@@ -161,6 +162,7 @@ body{
   background:linear-gradient(135deg, rgba(7,21,42,0.95), rgba(11,31,58,0.75));
   top:0;
   left:0;
+  z-index:1;
 }
 
 .hero-content{
@@ -265,56 +267,60 @@ body{
     gap:18px;
     padding:0 10px;
   }
+
+  .hero{
+    padding-top:120px;
+  }
 }
 
 /* Floating Stats */
 
 .hero-stats {
-    position: relative;
-    margin-top: 80px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 26px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
+  position: relative;
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 26px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
 }
 
 .stat-card {
-    backdrop-filter: blur(18px);
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 20px;
-    padding: 35px 20px;
-    text-align: center;
-    color: #fff;
-    transition: 0.4s ease;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  backdrop-filter: blur(18px);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 35px 20px;
+  text-align: center;
+  color: #fff;
+  transition: 0.4s ease;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
 .stat-card i {
-    font-size: 28px;
-    color: #f5c542;
-    margin-bottom: 15px;
+  font-size: 28px;
+  color: #f5c542;
+  margin-bottom: 15px;
 }
 
 .stat-card h3 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #f5c542;
-    margin-bottom: 8px;
+  font-size: 36px;
+  font-weight: 700;
+  color: #f5c542;
+  margin-bottom: 8px;
 }
 
 .stat-card p {
-    font-size: 14px;
-    letter-spacing: 1px;
-    opacity: 0.9;
+  font-size: 14px;
+  letter-spacing: 1px;
+  opacity: 0.9;
 }
 
 .stat-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
 }
 
 /* ================= GLASS CARDS ================= */
@@ -369,6 +375,22 @@ body{
 
 .principal-section .principal-card{
   text-align:center;
+  min-height:320px;
+  padding:40px 20px 30px;
+  background:rgba(255,255,255,0.95);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-medium);
+  transition:transform 0.35s ease, box-shadow 0.35s ease;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  gap:10px;
+}
+
+.principal-section .principal-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-strong);
 }
 
 .principal-img {
@@ -378,8 +400,9 @@ body{
   border-radius: 50%;
   margin: 0 auto 20px;
   display: block;
-  background:linear-gradient(135deg,#ddd,#bbb);
-  box-shadow:var(--shadow-soft);
+  border: 4px solid rgba(255,255,255,0.85);
+  background:#fff;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
 /* ================= ACADEMICS ================= */
@@ -420,7 +443,7 @@ body{
 .facility-item img{
   width:100%;
   height:100%;
-  object-fit:cover; /* keeps image proportional */
+  object-fit:cover;
   display:block;
   transition:0.6s ease;
 }
@@ -433,7 +456,6 @@ body{
 .facility-item:hover{
   box-shadow:var(--shadow-strong);
 }
-
 
 /* ================= GALLERY PREMIUM ================= */
 
@@ -449,52 +471,7 @@ body{
   border-radius:18px;
   background:#eee;
   box-shadow:var(--shadow-soft);
-  aspect-ratio:4/3; /* keeps alignment equal */
-}
-
-/* Auto Ratio Adjustment */
-.gallery-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:0.6s ease;
-  display:block;
-}
-
-/* Smooth Zoom */
-.gallery-item:hover img{
-  transform:scale(1.12);
-}
-
-/* Subtle Overlay Effect */
-.gallery-item::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top, rgba(0,0,0,0.3), transparent);
-  opacity:0;
-  transition:0.4s;
-}
-
-.gallery-item:hover::after{
-  opacity:1;
-}
-
-/* ================= GALLERY ================= */
-
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.gallery-item{
-  position:relative;
-  overflow:hidden;
-  border-radius:18px;
-  background:#eee;
-  box-shadow:var(--shadow-soft);
-  aspect-ratio:4/3; /* keeps alignment equal */
+  aspect-ratio:4/3;
 }
 
 /* Auto Ratio Adjustment */
@@ -528,60 +505,60 @@ body{
 /* ================= ACHIEVEMENTS ================= */
 
 .achievements {
-    padding: 100px 20px;
-    background: #f8f9fc;
-    text-align: center;
+  padding: 100px 20px;
+  background: #f8f9fc;
+  text-align: center;
 }
 
 .section-title h2 {
-    font-size: 38px;
-    font-weight: 700;
-    color: #0d1b3e;
+  font-size: 38px;
+  font-weight: 700;
+  color: #0d1b3e;
 }
 
 .section-title p {
-    color: #777;
-    margin-top: 10px;
+  color: #777;
+  margin-top: 10px;
 }
 
 .achievement-grid {
-    margin-top: 60px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .achievement-card {
-    background: #fff;
-    border-radius: 25px;
-    padding: 50px 30px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.08);
-    transition: 0.4s ease;
+  background: #fff;
+  border-radius: 25px;
+  padding: 50px 30px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
 }
 
 .achievement-card i {
-    font-size: 40px;
-    color: #f5c542;
-    margin-bottom: 20px;
+  font-size: 40px;
+  color: #f5c542;
+  margin-bottom: 20px;
 }
 
 .achievement-card h3 {
-    font-size: 42px;
-    color: #0d1b3e;
-    margin-bottom: 10px;
+  font-size: 42px;
+  color: #0d1b3e;
+  margin-bottom: 10px;
 }
 
 .achievement-card p {
-    font-size: 15px;
-    color: #666;
+  font-size: 15px;
+  color: #666;
 }
 
 .achievement-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 35px 80px rgba(0,0,0,0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.15);
 }
 
 /* ================= TESTIMONIAL ================= */
@@ -671,54 +648,54 @@ input, textarea{
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 992px) {
-    .hero-stats {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 576px) {
-    .hero-stats {
-        grid-template-columns: 1fr;
-    }
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 992px) {
-    .achievement-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+  .achievement-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 576px) {
-    .achievement-grid {
-        grid-template-columns: 1fr;
-    }
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== HEADER LOGO WITH TEXT ===== */
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .logo img {
-    height: 55px;
-    width: auto;
-    object-fit: contain;
+  height: 55px;
+  width: auto;
+  object-fit: contain;
 }
 
 .logo-text h2 {
-    font-size: 20px;
-    margin: 0;
-    font-weight: 700;
-    color: #fff;
+  font-size: 20px;
+  margin: 0;
+  font-weight: 700;
+  color: #fff;
 }
 
 .logo-text span {
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: #f5c542;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #f5c542;
 }
 /* ===== FOOTER BRAND CLEAN ===== */
 
