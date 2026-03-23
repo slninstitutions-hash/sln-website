@@ -33,17 +33,19 @@ document.querySelectorAll(".nav-menu a").forEach(link => {
 
 const header = document.querySelector(".header");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 80) {
-    header.style.padding = "5px 0";
-    header.style.background = "rgba(7,21,42,0.95)";
-    header.style.boxShadow = "0 10px 30px rgba(0,0,0,0.25)";
-  } else {
-    header.style.padding = "0";
-    header.style.background = "rgba(11,31,58,0.85)";
-    header.style.boxShadow = "none";
-  }
-});
+if (header) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 80) {
+      header.style.padding = "5px 0";
+      header.style.background = "rgba(7,21,42,0.95)";
+      header.style.boxShadow = "0 10px 30px rgba(0,0,0,0.25)";
+    } else {
+      header.style.padding = "0";
+      header.style.background = "rgba(11,31,58,0.85)";
+      header.style.boxShadow = "none";
+    }
+  });
+}
 
 
 /* ===============================
@@ -52,11 +54,12 @@ window.addEventListener("scroll", () => {
 
 const hero = document.querySelector(".hero");
 
-window.addEventListener("scroll", () => {
-  let offset = window.scrollY;
-  hero.style.backgroundPositionY = offset * 0.5 + "px";
-});
-
+if (hero) {
+  window.addEventListener("scroll", () => {
+    let offset = window.scrollY;
+    hero.style.backgroundPositionY = offset * 0.5 + "px";
+  });
+}
 
 /* ===============================
    PREMIUM COUNTER ANIMATION
