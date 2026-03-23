@@ -134,19 +134,22 @@ revealElements.forEach((el) => {
 const sections = document.querySelectorAll(".section");
 
 sections.forEach(section => {
-  const children = section.querySelectorAll(".glass-card, .facility-item, img, .step");
+  const children = section.querySelectorAll(
+    ".glass-card, .facility-item, .gallery-item, .testimonial-card, .principal-card"
+  );
 
   const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         children.forEach((child, i) => {
+          child.style.transition = "all 0.6s ease";
           child.style.transitionDelay = i * 0.1 + "s";
           child.style.opacity = 1;
           child.style.transform = "translateY(0)";
         });
       }
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.2 });
 
   children.forEach(child => {
     child.style.opacity = 0;
@@ -155,7 +158,6 @@ sections.forEach(section => {
 
   sectionObserver.observe(section);
 });
-
 
 /* ===============================
    ACTIVE NAV LINK HIGHLIGHT
