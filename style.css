@@ -407,6 +407,39 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
+/* ================= RESULTS ================= */
+
+.results-section{
+  padding:60px 20px;
+  background:#fff;
+  text-align:center;
+}
+
+.results-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+.result-card{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.result-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+.result-card img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+}
 /* ================= ACADEMICS ================= */
 
 .academics-grid{
