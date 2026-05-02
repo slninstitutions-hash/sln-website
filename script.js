@@ -217,6 +217,75 @@ buttons.forEach(btn => {
   });
 });
 
+/* ================= GALLERY SLIDER ================= */
+
+const slides = document.querySelector(".slides");
+const images = document.querySelectorAll(".slide");
+const dotsContainer = document.querySelector(".dots");
+
+if (slides && images.length > 0 && dotsContainer) {
+
+  let index = 0;
+  let interval;
+
+  // Create dots
+  images.forEach((_, i) => {
+    const dot = document.createElement("span");
+    if (i === 0) dot.classList.add("active");
+
+    dot.addEventListener("click", () => moveToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dots span");
+
+  function moveToSlide(i) {
+    index = i;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+
+    resetAutoSlide();
+  }
+
+  function startAutoSlide() {
+    interval = setInterval(() => {
+      index = (index + 1) % images.length;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[index].classList.add("active");
+    }, 5000); 
+  }
+
+  function resetAutoSlide() {
+    clearInterval(interval);
+    startAutoSlide();
+  }
+
+  // Swipe support
+  let startX = 0;
+
+  slides.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  slides.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) {
+      index = (index + 1) % images.length;
+    } else if (endX - startX > 50) {
+      index = (index - 1 + images.length) % images.length;
+    }
+
+    moveToSlide(index);
+  });
+
+  startAutoSlide();
+   }
+
 
 /* ===============================
    SCROLL PROGRESS BAR
