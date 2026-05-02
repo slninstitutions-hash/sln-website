@@ -423,7 +423,6 @@ body{
 
 /* ================= FACILITIES ================= */
 
-/* ================= FACILITIES GRID PREMIUM ================= */
 
 .facility-grid{
   display:grid;
@@ -504,89 +503,12 @@ body{
   opacity:1;
 }
 
-/* ================= ACHIEVEMENTS ================= */
-
-.achievements {
-  padding: 100px 20px;
-  background: #f8f9fc;
-  text-align: center;
-}
-
-.section-title h2 {
-  font-size: 38px;
-  font-weight: 700;
-  color: #0d1b3e;
-}
-
-.section-title p {
-  color: #777;
-  margin-top: 10px;
-}
-
-.achievement-grid {
-  margin-top: 60px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.achievement-card {
-  background: #fff;
-  border-radius: 25px;
-  padding: 50px 30px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
-  transition: 0.4s ease;
-}
-
-.achievement-card i {
-  font-size: 40px;
-  color: #f5c542;
-  margin-bottom: 20px;
-}
-
-.achievement-card h3 {
-  font-size: 42px;
-  color: #0d1b3e;
-  margin-bottom: 10px;
-}
-
-.achievement-card p {
-  font-size: 15px;
-  color: #666;
-}
-
-.achievement-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 35px 80px rgba(0,0,0,0.15);
-}
-
 /* ================= TESTIMONIAL ================= */
 
 .testimonial-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:30px;
-}
-
-/* ================= ADMISSION ================= */
-
-.admission-form,
-.contact-form{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-  max-width:500px;
-  margin:auto;
-}
-
-input, textarea{
-  padding:14px;
-  border-radius:10px;
-  border:1px solid #ccc;
-  font-family:inherit;
 }
 
 /* ================= CONTACT ================= */
