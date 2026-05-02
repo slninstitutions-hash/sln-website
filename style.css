@@ -860,4 +860,11 @@ body{
     overflow: hidden;
   }
 }
+/* ================= FULL WIDTH FOOTER + CONTACT ================= */
 
+#contact,
+.footer{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+}
