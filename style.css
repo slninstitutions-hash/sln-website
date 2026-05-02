@@ -512,6 +512,20 @@ body{
 }
 
 /* ================= CONTACT ================= */
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  max-width:500px;
+  margin:auto;
+}
+
+input, textarea{
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-family:inherit;
+  }
 
 .contact-grid{
   display:grid;
