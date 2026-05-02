@@ -35,9 +35,11 @@ body{
 }
 
 .container{
-  width:90%;
+  width:100%;
   max-width:1200px;
   margin:auto;
+  padding-left:20px;
+  padding-right:20px;
 }
 
 .section{
@@ -859,4 +861,13 @@ body{
   body.no-scroll {
     overflow: hidden;
   }
+}
+
+/* FULL WIDTH CONTACT + FOOTER */
+
+#contact .container,
+.footer .container{
+  max-width:100%;
+  padding-left:0;
+  padding-right:0;
 }
