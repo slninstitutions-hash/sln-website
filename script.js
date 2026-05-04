@@ -310,11 +310,11 @@ window.addEventListener("scroll", () => {
 });
 
 /* ===============================
-   CONTACT FORM EMAIL + SUCCESS
+   CONTACT FORM POPUP SUCCESS
 ================================== */
 
 const form = document.getElementById("contactForm");
-const successMessage = document.getElementById("successMessage");
+const toast = document.getElementById("toastMessage");
 
 if(form){
   form.addEventListener("submit", function(e){
@@ -326,11 +326,14 @@ if(form){
     })
     .then(res => {
       if(res.ok){
-        successMessage.style.display = "block";
         form.reset();
 
+        // SHOW POPUP
+        toast.classList.add("show");
+
+        // HIDE AFTER 5 SEC
         setTimeout(() => {
-          successMessage.style.display = "none";
+          toast.classList.remove("show");
         }, 5000);
       }
     })
