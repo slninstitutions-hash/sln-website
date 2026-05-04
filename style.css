@@ -868,3 +868,20 @@ body{
   margin-left:calc(50% - 50vw);
   margin-right:calc(50% - 50vw);
 }
+
+.success-message{
+  display:none;
+  margin-top:15px;
+  padding:12px;
+  background:#28a745;
+  color:#fff;
+  border-radius:10px;
+  font-weight:600;
+  text-align:center;
+  animation:fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1; transform:translateY(0);}
+}
