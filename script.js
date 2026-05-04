@@ -308,3 +308,34 @@ window.addEventListener("scroll", () => {
 });
 
 });
+
+/* ===============================
+   CONTACT FORM EMAIL + SUCCESS
+================================== */
+
+const form = document.getElementById("contactForm");
+const successMessage = document.getElementById("successMessage");
+
+if(form){
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form)
+    })
+    .then(res => {
+      if(res.ok){
+        successMessage.style.display = "block";
+        form.reset();
+
+        setTimeout(() => {
+          successMessage.style.display = "none";
+        }, 5000);
+      }
+    })
+    .catch(() => {
+      alert("Message not sent. Try again.");
+    });
+  });
+}
