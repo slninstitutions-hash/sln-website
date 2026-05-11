@@ -304,8 +304,6 @@ window.addEventListener("scroll", () => {
   progressBar.style.width = progress + "%";
 });
 
-});
-
 /* ===============================
    CONTACT FORM TOAST NOTIFICATION
 ================================== */
@@ -321,17 +319,15 @@ if (form && toast) {
       method: "POST",
       body: new FormData(form),
       headers: {
-        'Accept': 'application/json'
+        Accept: "application/json"
       }
     })
     .then(response => {
       if (response.ok) {
         form.reset();
 
-        // Show toast
         toast.classList.add("show");
 
-        // Hide after 5 sec
         setTimeout(() => {
           toast.classList.remove("show");
         }, 5000);
@@ -345,4 +341,6 @@ if (form && toast) {
       alert("Message not sent. Try again.");
     });
   });
-                        }
+}
+
+});
