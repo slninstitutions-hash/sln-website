@@ -100,32 +100,30 @@ counters.forEach(counter => {
   counterObserver.observe(counter);
 });
 
-
 /* ===============================
    SCROLL REVEAL ANIMATION
 ================================== */
 
 const revealElements = document.querySelectorAll(
-  ".glass-card, .facility-item, .gallery-grid img, .testimonial-card"
+  ".glass-card, .facility-item, .testimonial-card, .principal-card, .result-card, .slide, .contact-form, .contact-info"
 );
 
 const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
+      entry.target.style.opacity = "1";
       entry.target.style.transform = "translateY(0)";
-      entry.target.style.transition = "all 0.8s ease";
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.2 });
+}, { threshold: 0.15 });
 
-revealElements.forEach((el) => {
-  el.style.opacity = 0;
+revealElements.forEach(el => {
+  el.style.opacity = "0";
   el.style.transform = "translateY(60px)";
+  el.style.transition = "all 0.8s ease";
   revealObserver.observe(el);
 });
-
 
 /* ===============================
    STAGGER ANIMATION FOR SECTIONS
@@ -135,24 +133,23 @@ const sections = document.querySelectorAll(".section");
 
 sections.forEach(section => {
   const children = section.querySelectorAll(
-    ".glass-card, .facility-item, .gallery-item, .testimonial-card, .principal-card"
+    ".glass-card, .facility-item, .testimonial-card, .principal-card, .result-card, .slide, .contact-form, .contact-info"
   );
 
   const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         children.forEach((child, i) => {
-          child.style.transition = "all 0.6s ease";
-          child.style.transitionDelay = i * 0.1 + "s";
-          child.style.opacity = 1;
+          child.style.transitionDelay = `${i * 0.12}s`;
+          child.style.opacity = "1";
           child.style.transform = "translateY(0)";
         });
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.15 });
 
   children.forEach(child => {
-    child.style.opacity = 0;
+    child.style.opacity = "0";
     child.style.transform = "translateY(50px)";
   });
 
@@ -322,14 +319,19 @@ if (form && toast) {
 
     fetch(form.action, {
       method: "POST",
-      body: new FormData(form)
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
     })
     .then(response => {
       if (response.ok) {
         form.reset();
 
+        // Show toast
         toast.classList.add("show");
 
+        // Hide after 5 sec
         setTimeout(() => {
           toast.classList.remove("show");
         }, 5000);
@@ -339,8 +341,8 @@ if (form && toast) {
       }
     })
     .catch(error => {
-      console.error(error);
+      console.error("Form Error:", error);
       alert("Message not sent. Try again.");
     });
   });
-}
+                        }
