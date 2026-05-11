@@ -310,36 +310,36 @@ window.addEventListener("scroll", () => {
 });
 
 /* ===============================
-   CONTACT FORM POPUP SUCCESS
+   CONTACT FORM TOAST NOTIFICATION
 ================================== */
 
 const form = document.getElementById("contactForm");
-const toast = document.getElementById("successMessage");
+const toast = document.getElementById("toastMessage");
 
-if(form){
-  form.addEventListener("submit", function(e){
+if (form && toast) {
+  form.addEventListener("submit", function(e) {
     e.preventDefault();
 
     fetch(form.action, {
       method: "POST",
       body: new FormData(form)
     })
-    .then(res => {
-      if(res.ok){
+    .then(response => {
+      if (response.ok) {
         form.reset();
 
-        toast.style.display = "block";
         toast.classList.add("show");
 
         setTimeout(() => {
           toast.classList.remove("show");
-          toast.style.display = "none";
         }, 5000);
+
       } else {
         alert("Message not sent. Try again.");
       }
     })
-    .catch(() => {
+    .catch(error => {
+      console.error(error);
       alert("Message not sent. Try again.");
     });
   });
