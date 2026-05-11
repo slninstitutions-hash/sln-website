@@ -890,27 +890,12 @@ body {
   margin-right:calc(50% - 50vw);
 }
 
-.success-message{
-  display:none;
-  margin-top:15px;
-  padding:12px;
-  background:#28a745;
-  color:#fff;
-  border-radius:10px;
-  font-weight:600;
-  text-align:center;
-  animation:fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(10px);}
-  to{opacity:1; transform:translateY(0);}
-}
 
 .toast-message{
   position: fixed;
   top: 30px;
   right: 30px;
+  min-width: 260px;
   background: #28a745;
   color: #fff;
   padding: 14px 20px;
@@ -936,3 +921,15 @@ body {
 .toast-message i{
   font-size: 18px;
 }
+
+
+@media (max-width: 768px){
+  .toast-message{
+    top: 20px;
+    right: 15px;
+    left: 15px;
+    min-width: auto;
+    justify-content: center;
+    text-align: center;
+  }
+  }
