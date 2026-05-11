@@ -314,7 +314,7 @@ window.addEventListener("scroll", () => {
 ================================== */
 
 const form = document.getElementById("contactForm");
-const toast = document.getElementById("toastMessage");
+const toast = document.getElementById("successMessage");
 
 if(form){
   form.addEventListener("submit", function(e){
@@ -328,13 +328,15 @@ if(form){
       if(res.ok){
         form.reset();
 
-        // SHOW POPUP
+        toast.style.display = "block";
         toast.classList.add("show");
 
-        // HIDE AFTER 5 SEC
         setTimeout(() => {
           toast.classList.remove("show");
+          toast.style.display = "none";
         }, 5000);
+      } else {
+        alert("Message not sent. Try again.");
       }
     })
     .catch(() => {
